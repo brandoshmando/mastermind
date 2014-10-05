@@ -15,8 +15,9 @@ describe Master do
   end
 
   describe "#main_menu" do
+    #Temporary workaround
+    menu = "Welcome to Mastermind!\n\n---Main Menu---\n[1] 1 player\n[2] 2 player\n[3] vs. Computer\n[4] Exit\n"
 
-    menu = "Welcome to Mastermind!\n"
     it "outputs list of options for user" do
       expect { master.main_menu }.to output(menu).to_stdout
     end
