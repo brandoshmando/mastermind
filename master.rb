@@ -9,8 +9,12 @@ class Master
     master.main_menu
   end
   #Prints
+  def print_menu(menu)
+    puts menu
+  end
   def main_menu
-    puts Menu::START
+    print_menu(Menu::START)
+    user_input
   end
   #Clears terminal
   def clear_terminal

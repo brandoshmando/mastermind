@@ -18,6 +18,12 @@ describe Master do
     end
   end
 
+  describe "#print_menu" do
+    it "prints the given menu constant to the terminal" do
+      expect { allow(master).to receive(:print_menu).with("Test") }.to output("Test\n").to_stdout
+    end
+  end
+
   describe "#main_menu" do
     #Temporary workaround
     menu = "\n        Welcome to Mastermind\n    ------------------------------\n               Main Menu\n    ------------------------------\n    Select from the following:\n\n    [1] 1 player\n    [2] 2 player\n    [3] vs. Computer\n    [4] Exit\n    ------------------------------\n    \n"
