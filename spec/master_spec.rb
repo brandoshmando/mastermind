@@ -37,6 +37,12 @@ describe Master do
         expect(master).to receive(:print_menu)
       end
     end
+
+    it "calls option_caller" do
+      allow(master).to receive(:main_menu) do
+        expect(master).to receive(:option_caller)
+      end
+    end
   end
 
   context "#clear_terminal" do
@@ -55,11 +61,11 @@ describe Master do
   #   end
   # end
 =end
-  # context "#option_caller" do
-  #   it "calls method based on given option" do
-  #     expect(master).to receive(:option_caller).with(1).and_return(true)
-  #   end
-  # end
+  context "#option_caller" do
+    it "calls method based on given option" do
+      expect(master).to receive(:option_caller).with(1).and_return(true)
+    end
+  end
 end
 
 
