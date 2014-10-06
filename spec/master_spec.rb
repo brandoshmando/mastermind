@@ -4,7 +4,7 @@ describe Master do
   let(:master) { Master.new }
 
 
-  describe ".new" do
+  context ".new" do
     it "creates a new instance of master" do
       expect(master).to be_instance_of Master
     end
@@ -18,13 +18,13 @@ describe Master do
     end
   end
 
-  describe "#print_menu" do
+  context "#print_menu" do
     it "prints the given menu constant to the terminal" do
       expect { allow(master).to receive(:print_menu).with("Test") }.to output("Test\n").to_stdout
     end
   end
 
-  describe "#main_menu" do
+  context "#main_menu" do
     #Temporary workaround
     menu = "\n        Welcome to Mastermind\n    ------------------------------\n               Main Menu\n    ------------------------------\n    Select from the following:\n\n    [1] 1 player\n    [2] 2 player\n    [3] vs. Computer\n    [4] Exit\n    ------------------------------\n    \n>"
 
@@ -33,7 +33,7 @@ describe Master do
     end
   end
 
-  describe "#clear_terminal" do
+  context "#clear_terminal" do
     it "should return nil" do
       expect(master.clear_terminal).to be(nil)
     end
