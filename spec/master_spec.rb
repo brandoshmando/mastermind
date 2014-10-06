@@ -12,6 +12,10 @@ describe Master do
     it "should have method main_menu" do
       expect(master).to respond_to :main_menu
     end
+
+    it "should have method clear_terminal" do
+      expect(master).to respond_to :clear_terminal
+    end
   end
 
   describe "#main_menu" do
