@@ -6,7 +6,7 @@ describe Master do
 
   describe ".new" do
     it "creates a new instance of master" do
-      expect(master).to be_instance_of(Master)
+      expect(master).to be_instance_of Master
     end
 
     it "should have method main_menu" do
@@ -16,7 +16,7 @@ describe Master do
 
   describe "#main_menu" do
     #Temporary workaround
-    menu = "Welcome to Mastermind!\n\n---Main Menu---\n[1] 1 player\n[2] 2 player\n[3] vs. Computer\n[4] Exit\n"
+    menu = "\n        Welcome to Mastermind\n    ------------------------------\n               Main Menu\n    ------------------------------\n    Select from the following:\n\n    [1] 1 player\n    [2] 2 player\n    [3] vs. Computer\n    [4] Exit\n    ------------------------------\n    \n"
 
     it "outputs list of options for user" do
       expect { master.main_menu }.to output(menu).to_stdout

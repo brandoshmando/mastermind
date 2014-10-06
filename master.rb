@@ -1,12 +1,29 @@
 class Master
 
+  def self.run
+    master = Master.new
+    master.clear_terminal
+    master.main_menu
+  end
+
   def main_menu
-    puts "Welcome to Mastermind!"
-    puts
-    puts "---Main Menu---"
-    puts "[1] 1 player"
-    puts "[2] 2 player"
-    puts "[3] vs. Computer"
-    puts "[4] Exit"
+    puts """
+        Welcome to Mastermind
+    ------------------------------
+               Main Menu
+    ------------------------------
+    Select from the following:
+
+    [1] 1 player
+    [2] 2 player
+    [3] vs. Computer
+    [4] Exit
+    ------------------------------
+    """
+  end
+
+  def clear_terminal
+    puts "\e[H\e[2J"
   end
 end
+Master.run
