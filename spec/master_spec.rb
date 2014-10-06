@@ -26,4 +26,10 @@ describe Master do
       expect { master.main_menu }.to output(menu).to_stdout
     end
   end
+
+  describe "#clear_terminal" do
+    it "should return nil" do
+      expect(master.clear_terminal).to be(nil)
+    end
+  end
 end
