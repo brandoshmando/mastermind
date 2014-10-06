@@ -32,4 +32,16 @@ describe Master do
       expect(master.clear_terminal).to be(nil)
     end
   end
+
+  describe "#user_input" do
+
+    before { $stdin = StringIO.new("Some Test\n")}
+    after { $stdin = STDIN }
+
+    it "takes input from user and returns said input" do
+      expect(master.user_input).to eq("Some Test")
+    end
+  end
 end
+
+

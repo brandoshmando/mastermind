@@ -25,5 +25,8 @@ class Master
   def clear_terminal
     puts "\e[H\e[2J"
   end
+  def user_input
+    $stdin.gets.chomp
+  end
 end
 Master.run
