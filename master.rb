@@ -1,4 +1,7 @@
+require_relative 'menu.rb'
+
 class Master
+  include Menu
   #Runs program
   def self.run
     master = Master.new
@@ -7,19 +10,7 @@ class Master
   end
   #Prints
   def main_menu
-    puts """
-        Welcome to Mastermind
-    ------------------------------
-               Main Menu
-    ------------------------------
-    Select from the following:
-
-    [1] 1 player
-    [2] 2 player
-    [3] vs. Computer
-    [4] Exit
-    ------------------------------
-    """
+    puts Menu::START
   end
   #Clears terminal
   def clear_terminal
