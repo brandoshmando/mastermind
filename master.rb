@@ -1,6 +1,6 @@
-require_relative 'menu.rb'
-
 class Master
+  require_relative 'menu.rb'
+
   include Menu
   #Runs program
   def self.run
@@ -21,7 +21,8 @@ class Master
     puts "\e[H\e[2J"
   end
   def user_input
-    $stdin.gets.chomp
+    print ">"
+    input = gets.chomp
   end
 end
 Master.run
