@@ -18,18 +18,24 @@ describe Master do
     end
   end
 
-  context "#print_menu" do
-    it "prints the given menu constant to the terminal" do
-      expect { allow(master).to receive(:print_menu).with("Test") }.to output("Test\n").to_stdout
-    end
-  end
-
   context "#main_menu" do
     #Temporary workaround
     menu = "\n        Welcome to Mastermind\n    ------------------------------\n               Main Menu\n    ------------------------------\n    Select from the following:\n\n    [1] 1 player\n    [2] 2 player\n    [3] vs. Computer\n    [4] Exit\n    ------------------------------\n    \n>"
 
     it "outputs list of options for user" do
       expect { master.main_menu }.to output(menu).to_stdout
+    end
+
+    it "calls print_menu" do
+      allow(master).to receive(:main_menu) do
+        expect(master).to receive(:print_menu)
+      end
+    end
+
+    it "calls user_input" do
+      allow(master).to receive(:main_menu) do
+        expect(master).to receive(:print_menu)
+      end
     end
   end
 
@@ -49,6 +55,11 @@ describe Master do
   #   end
   # end
 =end
+  # context "#option_caller" do
+  #   it "calls method based on given option" do
+  #     expect(master).to receive(:option_caller).with(1).and_return(true)
+  #   end
+  # end
 end
 
 

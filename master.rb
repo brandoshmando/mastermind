@@ -20,9 +20,19 @@ class Master
   def clear_terminal
     puts "\e[H\e[2J"
   end
+
   def user_input
     print ">"
     input = gets.chomp
+  end
+
+  def option_caller(input)
+    while true
+      case input
+      when 1
+        true
+      end
+    end
   end
 end
 Master.run
