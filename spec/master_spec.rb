@@ -63,7 +63,7 @@ describe Master do
 =end
   # context "#option_caller" do
   #   it "calls method based on given option" do
-  #     expect(master).to receive(:option_caller).with(1).and_return(true)
+  #     # allow(master).to receive(:gets,).with("1")
   #   end
   # end
 end

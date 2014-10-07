@@ -23,7 +23,9 @@ class Master
   end
 
   def user_input
-    gets.chomp
+    input = gets
+    input ||= ''
+    input.chomp
   end
 
   def option_caller
