@@ -15,7 +15,7 @@ class Master
   def main_menu
     print_menu(Menu::START)
     user_input
-    option_caller
+    # option_caller
   end
   #Clears terminal
   def clear_terminal
@@ -26,21 +26,21 @@ class Master
     $stdin.gets
   end
 
-  def option_caller
-    while true
-      print ">"
-      input = user_input.to_i
-      if input == 1
-        puts "Yup!"
-      elsif input == 2
-        puts "Yup2!"
-      elsif input == 3
-        puts "Yup3!"
-      else
-        puts "Please enter a valid option"
-        next
-      end
-    end
-  end
+  # def option_caller
+  #   while true
+  #     print ">"
+
+  #     if input == 1
+  #       puts "Yup!"
+  #     elsif input == 2
+  #       puts "Yup2!"
+  #     elsif input == 3
+  #       puts "Yup3!"
+  #     else
+  #       puts "Please enter a valid option"
+  #       next
+  #     end
+  #   end
+  # end
 end
 Master.run

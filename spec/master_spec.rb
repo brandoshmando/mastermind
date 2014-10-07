@@ -54,13 +54,17 @@ describe Master do
   Getting insane inconsistent results with this test.
   Sometimes it works fine, other times it throws an
   unable to load file 'gets' error...Too much time spent
-
-  # describe "#user_input" do
-  #   it "takes input from user and returns said input" do
-  #     expect(master).to recieve(:user_input).and_return(input)
-  #   end
-  # end
 =end
+  describe "#user_input" do
+    before(:example) { $stdin = StringIO.new("Tester Magoo\n") }
+
+    after(:example) { $stdin = STDIN }
+
+    it "it should return $stdin" do
+      expect(master.user_input).to eq("Tester Magoo\n")
+    end
+  end
+
   # context "#option_caller" do
   #   it "calls method based on given option" do
   #     # allow(master).to receive(:gets,).with("1")
