@@ -4,7 +4,7 @@ describe Master do
   let(:master) { Master.new }
 
 
-  context ".new" do
+  describe ".new" do
     it "creates a new instance of master" do
       expect(master).to be_instance_of Master
     end
@@ -18,9 +18,9 @@ describe Master do
     end
   end
 
-  context "#main_menu" do
+  describe "#main_menu" do
     #Temporary workaround
-    menu = "\n        Welcome to Mastermind\n    ------------------------------\n               Main Menu\n    ------------------------------\n    Select from the following:\n\n    [1] 1 player\n    [2] 2 player\n    [3] vs. Computer\n    [4] Exit\n    ------------------------------\n    \n>"
+    menu = "\n        Welcome to Mastermind\n    ------------------------------\n               Main Menu\n    ------------------------------\n    Select from the following:\n\n    [1] 1 player\n    [2] 2 player\n    [3] vs. Computer\n    [4] Exit\n    ------------------------------\n    \n"
 
     it "outputs list of options for user" do
       expect { master.main_menu }.to output(menu).to_stdout
@@ -45,7 +45,7 @@ describe Master do
     end
   end
 
-  context "#clear_terminal" do
+  describe "#clear_terminal" do
     it "should return nil" do
       expect(master.clear_terminal).to be(nil)
     end
@@ -61,11 +61,11 @@ describe Master do
   #   end
   # end
 =end
-  context "#option_caller" do
-    it "calls method based on given option" do
-      expect(master).to receive(:option_caller).with(1).and_return(true)
-    end
-  end
+  # context "#option_caller" do
+  #   it "calls method based on given option" do
+  #     expect(master).to receive(:option_caller).with(1).and_return(true)
+  #   end
+  # end
 end
 
 

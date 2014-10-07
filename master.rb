@@ -14,6 +14,7 @@ class Master
   end
   def main_menu
     print_menu(Menu::START)
+    user_input
     option_caller
   end
   #Clears terminal
@@ -33,7 +34,7 @@ class Master
         puts "Yup!"
       elsif input == 2
         puts "Yup2!"
-      elsif input == 2
+      elsif input == 3
         puts "Yup3!"
       else
         puts "Please enter a valid option"
