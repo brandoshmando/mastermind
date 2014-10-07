@@ -20,7 +20,7 @@ describe Master do
 
   describe "#main_menu" do
     #Temporary workaround
-    menu = "\n        Welcome to Mastermind\n    ------------------------------\n               Main Menu\n    ------------------------------\n    Select from the following:\n\n    [1] 1 player\n    [2] 2 player\n    [3] vs. Computer\n    [4] Exit\n    ------------------------------\n    \n"
+    menu = "        Welcome to Mastermind\n    ------------------------------\n               Main Menu\n    ------------------------------\n    Select from the following:\n\n    [1] 1 player vs. Computer\n    [2] 2 player\n    [3] Exit\n    ------------------------------\n>"
 
     it "outputs list of options for user" do
       expect { master.main_menu }.to output(menu).to_stdout
@@ -67,7 +67,7 @@ describe Master do
 
   describe "#option_caller" do
     it "calls method based on given option" do
-      allow(master).to receive(:gets,).with("1")
+      allow(master).to receive(:gets).with("1")
     end
   end
 end
