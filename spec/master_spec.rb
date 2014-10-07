@@ -60,16 +60,16 @@ describe Master do
 
     after(:example) { $stdin = STDIN }
 
-    it "it should return $stdin" do
+    it "returns $stdin" do
       expect(master.user_input).to eq("Tester Magoo\n")
     end
   end
 
-  # context "#option_caller" do
-  #   it "calls method based on given option" do
-  #     # allow(master).to receive(:gets,).with("1")
-  #   end
-  # end
+  describe "#option_caller" do
+    it "calls method based on given option" do
+      allow(master).to receive(:gets,).with("1")
+    end
+  end
 end
 
 

@@ -7,10 +7,9 @@ module Menu
     ------------------------------
     Select from the following:
 
-    [1] 1 player
+    [1] 1 player vs. Computer
     [2] 2 player
-    [3] vs. Computer
-    [4] Exit
+    [3] Exit
     ------------------------------
     "
 end
