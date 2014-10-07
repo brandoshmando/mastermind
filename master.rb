@@ -23,9 +23,7 @@ class Master
   end
 
   def user_input
-    input = gets
-    input ||= ''
-    input.chomp
+    $stdin.gets
   end
 
   def option_caller
