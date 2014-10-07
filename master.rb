@@ -35,11 +35,11 @@ class Master
     while true
       input = user_input.to_i
       if input == 1
-        puts "Yup!"
+        add_players(input)
       elsif input == 2
-        puts "Yup2!"
+        add_players(input)
       elsif input == 3
-        puts "Yup3!"
+        return
       else
         puts "Please enter a valid option"
         next
