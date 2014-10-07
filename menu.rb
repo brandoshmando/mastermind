@@ -1,6 +1,7 @@
 module Menu
 
-  START = "
+  START =
+  "
         Welcome to Mastermind
     ------------------------------
                Main Menu
