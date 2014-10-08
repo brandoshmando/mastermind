@@ -4,9 +4,8 @@ class Master
   include Prompt
   #Runs program
   def self.run
-    master = new
-    master.clear_terminal
-    master.main_menu
+    $master = new
+    $master.main_menu
   end
 
   #Prints
@@ -14,6 +13,7 @@ class Master
     puts prompt
   end
   def main_menu
+    clear_terminal
     print_prompt(Prompt::START_MENU)
     option_caller
   end
@@ -32,6 +32,7 @@ class Master
       user_input
       if $user_input.to_i == 1 || $user_input.to_i == 2
         new_game
+        return $master.main_menu
       elsif $user_input.to_i == 3
         puts "Buh Bye!"
         return
@@ -64,10 +65,12 @@ class Master
     print_prompt(Prompt::NUM_ROUNDS)
     while true
       user_input
-      @game.round_counter = if $user_input.to_i && $user_input.to_i <= 10 && $user_input.to_i.even?
+      if $user_input.to_i && $user_input.to_i <= 10 && $user_input.to_i.even?
+        @game.round_counter = $user_input.to_i
+        return
       else
       print_prompt(Prompt::VALID_INPUT)
-
+      next
       end
     end
   end
