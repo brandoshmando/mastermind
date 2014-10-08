@@ -6,7 +6,7 @@ class Game
     @player_one = nil
     @player_two = Computer.new("Computer")
     @rounds = []
-    @round_counter = 0
+    @round_counter = nil
     # @possible_points = something
   end
 end
