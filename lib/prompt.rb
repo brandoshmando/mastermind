@@ -11,4 +11,8 @@ module Prompt
     [2] 2 player
     [3] Exit
     ------------------------------"
+  def player_prompt(position)
+    "Player #{position}, please enter your name:
+     -------------------------------------------"
+  end
 end

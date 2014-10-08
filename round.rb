@@ -3,5 +3,6 @@ class Round
     @rows
     @codemaker
     @code_breaker
+    @code
   end
 end

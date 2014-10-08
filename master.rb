@@ -1,6 +1,6 @@
 class Master
   require_relative 'lib/prompt.rb'
-
+  require_relative 'game.rb'
   include Prompt
   #Runs program
   def self.run
@@ -10,7 +10,7 @@ class Master
   end
 
   def initialize
-    # @game = Game.new
+    @game = Game.new
   end
   #Prints
   def print_prompt(prompt)
@@ -35,9 +35,9 @@ class Master
     while true
       input = user_input.to_i
       if input == 1
-        "Yup1"
+        puts "Yup1"
       elsif input == 2
-        "Yup2"
+        puts "Yup2"
       elsif input == 3
         return
       else
@@ -47,13 +47,14 @@ class Master
     end
   end
 
-  # def add_players(num_of_players)
-  #   num_of_players.times do |i|
-  #     position = i == 1 ? "one" : "two"
-  #     print_prompt(Prompt::PLAYER_NAME)
-  #     name = user_input
-  #     @game.add(Player.new(name, i))
-  #   end
-  # end
+  def game_config(num_players)
+    num_players.times do |i|
+      position = i + 1 == 1 ? "one" : "two"
+      print_prompt(Prompt::PLAYER_PROMPT)
+      name = user_input.chomp
+      # @game.player_"#{position}" = Player.new(name)
+    end
+
+  end
 end
 Master.run

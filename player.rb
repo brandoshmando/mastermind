@@ -1,6 +1,6 @@
 class Player
   def initialize(name)
     @name = name
-    @points = points
+    @points = 0
   end
 end
