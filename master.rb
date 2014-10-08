@@ -34,10 +34,8 @@ class Master
   def option_caller
     while true
       input = user_input.to_i
-      if input == 1
-        puts "Yup1"
-      elsif input == 2
-        puts "Yup2"
+      if input == 1 || input == 2
+        game_config(input)
       elsif input == 3
         return
       else
@@ -50,7 +48,7 @@ class Master
   def game_config(num_players)
     num_players.times do |i|
       position = i + 1 == 1 ? "one" : "two"
-      print_prompt(Prompt::PLAYER_PROMPT)
+      print_prompt(Prompt::player_prompt(position))
       name = user_input.chomp
       # @game.player_"#{position}" = Player.new(name)
     end
