@@ -8,6 +8,10 @@ class Master
     $master.main_menu
   end
 
+  def initialize
+    @game = Game.new
+  end
+
   #Prints
   def print_prompt(prompt)
     puts prompt
@@ -31,7 +35,7 @@ class Master
     while true
       user_input
       if $user_input.to_i == 1 || $user_input.to_i == 2
-        new_game
+        game_config
         return $master.main_menu
       elsif $user_input.to_i == 3
         puts "Buh Bye!"
@@ -41,11 +45,6 @@ class Master
         next
       end
     end
-  end
-
-  def new_game
-    @game = Game.new
-    game_config
   end
 
   def game_config
@@ -67,6 +66,7 @@ class Master
       user_input
       if $user_input.to_i && $user_input.to_i <= 10 && $user_input.to_i.even?
         @game.round_counter = $user_input.to_i
+        execute_game
         return
       else
       print_prompt(Prompt::VALID_INPUT)
@@ -80,5 +80,27 @@ class Master
       @game.add_player(Computer.birth)
     end
   end
+
+  def execute_game
+
+  end
 end
 Master.run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
