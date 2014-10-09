@@ -28,16 +28,16 @@ class Master
 
   def user_input
     print ">"
-    $user_input = gets.chomp
+    gets.chomp
   end
 
   def option_caller
     while true
-      user_input
-      if $user_input.to_i == 1 || $user_input.to_i == 2
+      option = user_input.to_i
+      if option == 1 || option == 2
         game_config
         return $master.main_menu
-      elsif $user_input.to_i == 3
+      elsif option == 3
         puts "Buh Bye!"
         return
       else
