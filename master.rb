@@ -12,14 +12,16 @@ class Master
     @game = Game.new
   end
 
-  #Prints
+  #Prints a given string
   def print_prompt(prompt)
     puts prompt
   end
+
   def main_menu
     clear_terminal
     print_prompt(Prompt::START_MENU)
-    option_caller
+    option = user_input.to_i
+    option_caller(option)
   end
   #Clears terminal
   def clear_terminal
@@ -31,9 +33,8 @@ class Master
     gets.chomp
   end
 
-  def option_caller
+  def option_caller(option)
     while true
-      option = user_input.to_i
       if option == 1 || option == 2
         game_config
         return $master.main_menu
