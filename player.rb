@@ -1,6 +1,6 @@
 class Player
-  def initialize(name)
-    @name = name
+  def initialize
+    @name = ""
     @points = 0
   end
 end
