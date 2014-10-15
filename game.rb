@@ -10,6 +10,7 @@ class Game
 
   def initialize
     @player = Player.new
+    @computer = Computer.new("Compueterface")
     @rounds = []
   end
 
@@ -84,6 +85,7 @@ class Game
       may be used multiple times.
       ------------------------------
     "
+
   end
 end
 
