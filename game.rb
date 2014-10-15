@@ -63,9 +63,26 @@ class Game
       Please enter a name:
       "
     @player.name = player_input
+    execute_game
+  end
 
+  def execute_game
+    clear_terminal
     puts "
-      Welcome #{@player.name}. Game on!
+      Bring it on #{@player.name}!
+      ----------------------------
+      R = Red
+      G = Green
+      O = Orange
+      Y = Yellow
+      B = Blue
+      P = Purple
+
+      Please enter four of the letters
+      from above that correspond to a color
+      in any order of your choosing. Colors
+      may be used multiple times.
+      ------------------------------
     "
   end
 end
