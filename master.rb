@@ -36,7 +36,7 @@ class Master
   def option_caller(option)
     while true
       if option == 1 || option == 2
-        game_config
+        game_config(option)
         return $master.main_menu
       elsif option == 3
         puts "Buh Bye!"
@@ -48,25 +48,25 @@ class Master
     end
   end
 
-  def game_config
+  def game_config(option)
     #Creates players and adds them to game
-    $user_input.to_i.times do |i|
+    option.times do |i|
       position = i + 1 == 1 ? "one" : "two"
       print_prompt(
         "Player #{position}, please enter your name:
 --------------------------------------")
-      name = user_input.chomp
+      name = user_input
       @game.add_player(Player.new(name))
     end
     #Checks to see if the format will be 1 player vs computer and adds
     #a Computer player if that is the case
-    comp_or_player
+    comp_or_player(option)
     #Users input the number of rounds they would like to play
     print_prompt(Prompt::NUM_ROUNDS)
     while true
-      user_input
-      if $user_input.to_i && $user_input.to_i <= 10 && $user_input.to_i.even?
-        @game.round_counter = $user_input.to_i
+      rounds = user_input.to_i
+      if rounds && rounds <= 10 && rounds.even?
+        @game.round_counter = rounds
         execute_game
         return
       else
@@ -76,14 +76,16 @@ class Master
     end
   end
 
-  def comp_or_player
-    if $user_input.to_i == 1
+  def comp_or_player(option)
+    if option == 1
       @game.add_player(Computer.birth)
     end
   end
 
   def execute_game
+    while @game.round_counter > 0
 
+    end
   end
 end
 Master.run

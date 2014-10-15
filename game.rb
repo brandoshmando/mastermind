@@ -1,12 +1,10 @@
 class Game
-  require_relative 'computer.rb'
-  attr_accessor :round_counter
+  require_relative 'computer'
+  require_relative 'player'
 
   def initialize
-    @players = []
+    @player = Player.new
     @rounds = []
-    @round_counter = nil
-    # @possible_points = something
   end
 
   def add_player(player)
