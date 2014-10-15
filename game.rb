@@ -43,7 +43,8 @@ class Game
     while true
       case option.to_i
       when 1
-        #call a method
+        config_game
+        return
       when 2
         puts "Buh Bye now!"
         return
@@ -53,6 +54,19 @@ class Game
         next
       end
     end
+  end
+
+  def config_game
+    clear_terminal
+    puts "
+      --------------------
+      Please enter a name:
+      "
+    @player.name = player_input
+
+    puts "
+      Welcome #{@player.name}. Game on!
+    "
   end
 end
 
